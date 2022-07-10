@@ -19,7 +19,7 @@ client.on('messageCreate',message=>{
     if(message.author.bot){
 
     }else{
-        axios.get('http://localhost:3000/api/get')
+        axios.get('https://astucefxbot.herokuapp.com/api/get')
         .then(data=>{
             let value=false
             data.data.msg.map(elt=>{
@@ -32,7 +32,7 @@ client.on('messageCreate',message=>{
                     message.reply(`Congratulation you're now fully in AstuceFx discord group check out  ${client.channels.cache.get('985357709849284708')} to know how the discord works`);
                     message.member.roles.add('980587306635370517')
                     message.member.roles.remove('980587812019646534')
-                    axios.delete(`http://localhost:3000/api/delete/${elt.token}`)
+                    axios.delete(`https://astucefxbot.herokuapp.com/api/delete/${elt.token}`)
                     .then(data=>{
                         console.log('done well')
                     })
